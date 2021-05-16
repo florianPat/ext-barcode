@@ -1,0 +1,13 @@
+<div xmlns:f="TYPO3\CMS\Fluid\ViewHelpers" class="container">
+    <p>Barcode for {code}</p> <br/>
+    <ul>
+        <li>
+            <span>HTML: </span>
+            <f:format.html>{html}</f:format.html>
+        </li>
+        <li>
+            <span>SVG: </span>
+            <img src="data:image/svg+xml;base64,{svg}">
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,48 @@
+{
+	"name": "patruck/barcode",
+	"type": "typo3-cms-extension",
+	"description": "Barcode reader and writer for TYPO3",
+	"require": {
+		"php": "^7.4",
+		"typo3/cms-core": "^10.4",
+		"typo3/cms-backend": "^10.4",
+		"typo3/cms-frontend": "^10.4",
+		"typo3/cms-extbase": "^10.4",
+		"typo3/cms-install": "^10.4",
+		"typo3/cms-recordlist": "^10.4",
+		"lochmueller/autoloader": "^7.1",
+		"tecnickcom/tcpdf": "^6.4"
+	},
+	"config": {
+		"vendor-dir": ".Build/vendor",
+		"bin-dir": ".Build/bin",
+		"preferred-install": {
+			"*": "dist"
+		}
+	},
+	"autoload": {
+		"psr-4": {
+			"Patruck\\Barcode\\": "Classes/"
+		}
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"Patruck\\Barcode\\Tests\\": "Tests/"
+		}
+	},
+	"scripts": {
+		"post-autoload-dump": [
+			"TYPO3\\TestingFramework\\Composer\\ExtensionTestEnvironment::prepare"
+		]
+	},
+	"extra": {
+		"typo3/cms": {
+			"cms-package-dir": "{$vendor-dir}/typo3/cms",
+			"web-dir": ".Build/Web",
+			"extension-key": "site"
+		}
+	},
+	"require-dev": {
+		"typo3/testing-framework": "^6.8"
+	}
+}
